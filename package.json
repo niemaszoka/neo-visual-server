@@ -1,0 +1,14 @@
+{
+  "name": "neo-visual-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/niemaszoka/neo-visual-server",
+  "author": "Sylwia Grzegolec",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
