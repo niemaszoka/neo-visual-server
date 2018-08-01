@@ -16,7 +16,7 @@ getNeosRequestUrl = (startDate, stopDate) => {
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put all API endpoints under '/api'
-app.get('/nasa/neos/:startDate/:stopDate', (req, res) => {
+app.get('/nasa/neos/:startDate/:stopDate', cors(), (req, res) => {
   request(
     getNeosRequestUrl(req.params.startDate, req.params.stopDate),
     {json: true},
