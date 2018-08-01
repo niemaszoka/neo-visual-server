@@ -1,5 +1,6 @@
 const express = require('express');
 const request = require('request');
+const cors = require('cors');
 const path = require('path');
 
 const nasaApiKey = process.env.NASA_API_KEY;
@@ -15,7 +16,7 @@ getNeosRequestUrl = (startDate, stopDate) => {
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Put all API endpoints under '/api'
-app.get('/nasa/neos/:startDate/:stopDate', (req, res) => {
+app.get('/nasa/neos/:startDate/:stopDate', cors(), (req, res) => {
   request(
     getNeosRequestUrl(req.params.startDate, req.params.stopDate),
     {json: true},
